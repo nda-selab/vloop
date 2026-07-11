@@ -233,7 +233,7 @@ round-trip bagの仮想復路では，各トピックについて，選択区間
 
 reverse-only bagでは，元の終端メッセージが出力bagの先頭側に来るように時刻を変換する．
 
-元メッセージのbag時刻を `t`，選択区間の開始時刻を `t_{\mathrm{start}}`，終端時刻を `t_{\mathrm{end}}` とすると，出力bag時刻は次式である．
+元メッセージのbag時刻を $`t`$，選択区間の開始時刻を $`t_{\mathrm{start}}`$，終端時刻を $`t_{\mathrm{end}}`$ とすると，出力bag時刻は次式である．
 
 ```math
 t_{\mathrm{new}}
