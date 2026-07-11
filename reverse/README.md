@@ -211,9 +211,9 @@ $$
 
 これにより，元の終端側のメッセージから順に，往路終端の後ろへ単調増加する時刻で配置される．
 
-各トピックの`header.stamp`についても，そのトピックの終端header時刻 \(h_{\mathrm{end}}\) を基準に変換する．
+各トピックの`header.stamp`についても，そのトピックの終端header時刻 $h_{\mathrm{end}}$ を基準に変換する．
 
-\[
+$$
 h_{\mathrm{new}}
 =
 h_{\mathrm{end}}
@@ -221,7 +221,7 @@ h_{\mathrm{end}}
 \left(
 h_{\mathrm{end}}-h
 \right)
-\]
+$$
 
 ### 往路終端の重複回避
 
@@ -233,9 +233,9 @@ round-trip bagの仮想復路では，各トピックについて，選択区間
 
 reverse-only bagでは，元の終端メッセージが出力bagの先頭側に来るように時刻を変換する．
 
-元メッセージのbag時刻を \(t\)，選択区間の開始時刻を \(t_{\mathrm{start}}\)，終端時刻を \(t_{\mathrm{end}}\) とすると，出力bag時刻は次式である．
+元メッセージのbag時刻を $t$，選択区間の開始時刻を $t_{\mathrm{start}}$，終端時刻を $t_{\mathrm{end}}$ とすると，出力bag時刻は次式である．
 
-\[
+$$
 t_{\mathrm{new}}
 =
 t_{\mathrm{start}}
@@ -243,11 +243,11 @@ t_{\mathrm{start}}
 \left(
 t_{\mathrm{end}}-t
 \right)
-\]
+$$
 
 各トピックの`header.stamp`は，そのトピックの開始・終了header時刻を使って次のように変換する．
 
-\[
+$$
 h_{\mathrm{new}}
 =
 h_{\mathrm{start}}
@@ -255,7 +255,7 @@ h_{\mathrm{start}}
 \left(
 h_{\mathrm{end}}-h
 \right)
-\]
+$$
 
 これにより，仮想復路のメッセージは，選択区間の開始時刻付近から単調増加する時刻を持つ．
 
@@ -270,9 +270,9 @@ VelodyneScanメッセージについては，次の方針を採用する．
 - 各packetとスキャンheaderとの相対時刻を保持する
 - 絶対時刻だけを仮想復路の時刻へ移動する
 
-元のスキャンheader時刻を \(h_{\mathrm{old}}\)，新しいheader時刻を \(h_{\mathrm{new}}\)，元のpacket時刻を \(p_{\mathrm{old}}\) とすると，新しいpacket時刻は次式である．
+元のスキャンheader時刻を $h_{\mathrm{old}}$，新しいheader時刻を $h_{\mathrm{new}}$，元のpacket時刻を $p_{\mathrm{old}}$ とすると，新しいpacket時刻は次式である．
 
-\[
+$$
 p_{\mathrm{new}}
 =
 h_{\mathrm{new}}
@@ -280,7 +280,7 @@ h_{\mathrm{new}}
 \left(
 p_{\mathrm{old}}-h_{\mathrm{old}}
 \right)
-\]
+$$
 
 この処理により，1スキャン内の取得順序とpacket間の時間差を保持する．
 
