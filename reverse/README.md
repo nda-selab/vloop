@@ -197,7 +197,7 @@ python3 reverse_rosbag_roundtrip.py \
 
 round-trip bagでは，選択区間のメッセージを元の順序・時刻のまま往路として書き込み，その後ろに逆順のメッセージを仮想復路として接続する．
 
-元メッセージのbag時刻を `t`，選択区間の終端時刻を `t_{\mathrm{end}}` とすると，仮想復路のbag時刻は次式で計算される．
+元メッセージのbag時刻を $`t`$，選択区間の終端時刻を $`t_{\mathrm{end}}`$ とすると，仮想復路のbag時刻は次式で計算される．
 
 ```math
 t_{\mathrm{new}}
@@ -211,7 +211,7 @@ t_{\mathrm{end}}-t
 
 これにより，元の終端側のメッセージから順に，往路終端の後ろへ単調増加する時刻で配置される．
 
-各トピックの`header.stamp`についても，そのトピックの終端header時刻 `h_{\mathrm{end}}` を基準に変換する．
+各トピックの $`header.stamp`$ についても，そのトピックの終端header時刻 $`h_{\mathrm{end}}`$ を基準に変換する．
 
 ```math
 h_{\mathrm{new}}
@@ -270,7 +270,7 @@ VelodyneScanメッセージについては，次の方針を採用する．
 - 各packetとスキャンheaderとの相対時刻を保持する
 - 絶対時刻だけを仮想復路の時刻へ移動する
 
-元のスキャンheader時刻を `h_{\mathrm{old}}`，新しいheader時刻を `h_{\mathrm{new}}`，元のpacket時刻を `p_{\mathrm{old}}` とすると，新しいpacket時刻は次式である．
+元のスキャンheader時刻を $`h_{\mathrm{old}}`$，新しいheader時刻を $`h_{\mathrm{new}}`$，元のpacket時刻を $`p_{\mathrm{old}}`$ とすると，新しいpacket時刻は次式である．
 
 ```math
 p_{\mathrm{new}}
