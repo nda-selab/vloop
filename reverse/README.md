@@ -211,7 +211,7 @@ t_{\mathrm{end}}-t
 
 これにより，元の終端側のメッセージから順に，往路終端の後ろへ単調増加する時刻で配置される．
 
-各トピックの $`header.stamp`$ についても，そのトピックの終端header時刻 $`h_{\mathrm{end}}`$ を基準に変換する．
+各トピックの `header.stamp` についても，そのトピックの終端header時刻 $`h_{\mathrm{end}}`$ を基準に変換する．
 
 ```math
 h_{\mathrm{new}}
